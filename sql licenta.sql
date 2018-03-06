@@ -1,13 +1,13 @@
 CREATE TABLE `fish` (
 	`idFish` INT NOT NULL AUTO_INCREMENT,
-	`fishName` VARCHAR(255) NOT NULL AUTO_INCREMENT,
+	`fishName` VARCHAR(255) NOT NULL,
 	`fkBaitType` INT NOT NULL,
 	PRIMARY KEY (`idFish`)
 );
 
 CREATE TABLE `lake` (
 	`idLake` INT NOT NULL AUTO_INCREMENT,
-	`lakeName` VARCHAR(255) NOT NULL AUTO_INCREMENT,
+	`lakeName` VARCHAR(255) NOT NULL,
 	`fkFish` INT NOT NULL,
 	PRIMARY KEY (`idLake`)
 );
@@ -41,3 +41,4 @@ ALTER TABLE `lake` ADD CONSTRAINT `lake_fk0` FOREIGN KEY (`fkFish`) REFERENCES `
 ALTER TABLE `fishingType` ADD CONSTRAINT `fishingType_fk0` FOREIGN KEY (`fkBait`) REFERENCES `bait`(`idBait`);
 
 ALTER TABLE `fishSize` ADD CONSTRAINT `fishSize_fk0` FOREIGN KEY (`fkLake`) REFERENCES `lake`(`idLake`);
+
